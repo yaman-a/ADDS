@@ -1,12 +1,7 @@
 #include "Human.h"
 #include <bits/stdc++.h>
 
-Human::Human() {
-    std::cout << "Enter your name: ";
-    std::cin>> name;
-}
-
-Human::Human(const string& name) : name(name) {}
+Human::Human(string name) : name(name) {}
 
 char Human::makeMove() {
     char move;

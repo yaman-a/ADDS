@@ -8,8 +8,7 @@ class Human : public Player {
     private:
     string name;
     public:
-    Human();
-    Human(const string& name);
+    Human(string name = "Human");
     char makeMove() override;
     string getName() override;
 };
