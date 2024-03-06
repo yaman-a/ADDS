@@ -1,8 +1,8 @@
 #include "Computer.h"
 #include <bits/stdc++.h>
 
-char Computer::makeMove() {
-    return 'R';
+Move* Computer::makeMove() {
+    return new Rock();
 }
 
 string Computer::getName() {

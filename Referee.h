@@ -2,9 +2,9 @@
 #define REFEREE_H
 
 #include "Player.h"
+#include "Winner.h"
 
-class Referee
-{
+class Referee {
 private:
     
 public:

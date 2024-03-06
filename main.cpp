@@ -5,14 +5,14 @@
 
 int main() {
     // Create players
-    Human humanPlayer;
-    Computer cpu;
+    Human human1("player1");
+    Human human2("player2");
 
     // Create referee
     Referee referee;
 
     // Adjudicate the game
-    Player* winner = referee.refGame(&humanPlayer, &cpu);
+    Player* winner = referee.refGame(&human1, &human2);
 
     // Print the result
     if (winner == nullptr) {

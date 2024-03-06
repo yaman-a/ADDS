@@ -6,7 +6,7 @@
 
 class Move {
     public:
-    virtual std::string getName();
+    virtual std::string getName() = 0;
 };
 
 
