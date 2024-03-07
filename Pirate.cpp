@@ -1,6 +1,8 @@
 #include "Pirate.h"
 
-#include <string>
+Pirate::Pirate() {
+    beats = {"Robot", "Monkey"};
+}
 
 std::string Pirate::getName() {
     return "Pirate";

@@ -1,6 +1,8 @@
 #include "Ninja.h"
 
-#include <string>
+Ninja::Ninja() {
+    beats = {"Pirate", "Zombie"};
+}
 
 std::string Ninja::getName() {
     return "Ninja";

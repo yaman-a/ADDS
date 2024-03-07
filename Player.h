@@ -1,7 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <bits/stdc++.h>
+#include <string>
+#include <iostream>
 #include "Move.h"
 
 using namespace std;

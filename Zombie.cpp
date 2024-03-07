@@ -1,6 +1,8 @@
 #include "Zombie.h"
 
-#include <string>
+Zombie::Zombie() {
+    beats = {"Pirate", "Monkey"};
+}
 
 std::string Zombie::getName() {
     return "Zombie";

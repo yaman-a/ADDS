@@ -1,6 +1,8 @@
 #include "Robot.h"
 
-#include <string>
+Robot::Robot() {
+    beats = {"Ninja", "Zombie"};
+}
 
 std::string Robot::getName() {
     return "Robot";

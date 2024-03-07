@@ -1,6 +1,8 @@
 #include "Monkey.h"
 
-#include <string>
+Monkey::Monkey() {
+    beats = {"Ninja", "Robot"};
+}
 
 std::string Monkey::getName() {
     return "Monkey";

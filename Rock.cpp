@@ -1,6 +1,8 @@
 #include "Rock.h"
 
-#include <string>
+Rock::Rock() {
+    beats = {"Scissors"};
+}
 
 std::string Rock::getName() {
     return "Rock";

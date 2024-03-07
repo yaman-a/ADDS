@@ -3,8 +3,10 @@
 
 #include "Move.h"
 
+
 class Rock : public Move {
-public:
+    public:
+    Rock();
     std::string getName() override;
 };
 

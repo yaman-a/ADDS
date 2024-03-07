@@ -5,6 +5,8 @@
 #include "Move.h"
 #include "Rock.h"
 
+#include <string>
+
 class Computer : public Player {
     public:
     Move* makeMove() override;

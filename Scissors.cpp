@@ -1,6 +1,8 @@
 #include "Scissors.h"
 
-#include <string>
+Scissors::Scissors() {
+    beats = {"Paper"};
+}
 
 std::string Scissors::getName() {
     return "Scissors";

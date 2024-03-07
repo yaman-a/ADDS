@@ -1,6 +1,8 @@
 #include "Paper.h"
 
-#include <string>
+Paper::Paper() {
+    beats = {"Rock"};
+}
 
 std::string Paper::getName() {
     return "Paper";

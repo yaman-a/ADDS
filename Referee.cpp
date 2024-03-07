@@ -1,27 +1,24 @@
 #include "Referee.h"
-#include <bits/stdc++.h>
 
 
 Referee::Referee() {
 }
 
-Referee::~Referee() {
-}
-
 Player* Referee::refGame(Player* player1, Player* player2) {
-
     Move* move1 = player1->makeMove();
     Move* move2 = player2->makeMove();
     
-    Winner W;
+    std::string move1Name = move1->getName();
+    std::string move2Name = move2->getName();
 
-    Move* winner = W.getWinner(move1, move2);
 
-    if (winner == move1) {
+    // if player1's move beats player2, return player one, and vice versa.
+    if (move1->beats.find(move2Name) != move1->beats.end()) {
         return player1;
-    } else if (winner == move2) {
+    } else if (move2->beats.find(move1Name) != move2->beats.end()) {
         return player2;
-    } else {
-        return nullptr;
-    }
+    } 
+
+    return nullptr;
+
 }
