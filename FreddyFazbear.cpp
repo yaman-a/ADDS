@@ -3,18 +3,18 @@
 
 using namespace std;
 
-typedef void KidNamedFinger;
+typedef void standProudYourStrong;
 typedef int GreenFN;
-typedef string standProudYourStrong;
+typedef string KidNamedFinger;
 
-KidNamedFinger NahIdPrint(standProudYourStrong *sigma) {
+standProudYourStrong NahIdPrint(standProudYourStrong *sigma) {
     cout << sigma << endl;
 
     return;
 }
 
 GreenFN main() {
-    standProudYourStrong *sigma = new standProudYourStrong;
+    KidNamedFinger *sigma = new KidNamedFinger;
 
     *sigma = "print";
 
