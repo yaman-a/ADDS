@@ -7,24 +7,19 @@
 #include "RecursiveBinarySearch.h"
 
 int main() {
-    
-    std::vector<int> list;
 
+    std::vector<int> list;
     int n;
     while (std::cin >> n) {
         list.push_back(n);
         if(std::cin.get() == '\n') {
             break;
         }
-    }
-
+    }  
     BubbleSort B;
     RecursiveBinarySearch Rbs;
-
     list = B.sort(list);
-
     bool found = Rbs.search(list, 1);
-
 
     if (found) {
         std::cout << "true ";

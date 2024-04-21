@@ -14,7 +14,7 @@ bool RecursiveBinarySearch::binary(std::vector<int>& list, int n, int low, int h
     if (list[mid] == n) {
         return true;
     } else if (list[mid] > n) {
-        return binary(list, n, low, mid + 1);
+        return binary(list, n, low, mid - 1);
     } else {
         return binary(list, n, mid + 1, high);
     }
