@@ -41,6 +41,9 @@ bool LinkedList::swap(int pos1, int pos2) {
 
     int n1 = 0;
 
+    // find which node is in pos1
+    // then keep track of it and the one before it
+
     if (pos1 == 0) {
         node1 = head;
         temp1 = node1;
@@ -61,6 +64,8 @@ bool LinkedList::swap(int pos1, int pos2) {
 
     int n2 = 0;
 
+    // same thing with pos2
+
     if (pos2 == 0) {
         node2 = head;
         temp2 = node2;
@@ -75,6 +80,8 @@ bool LinkedList::swap(int pos1, int pos2) {
             n2++;
         }
     }
+
+    // perform swap operation
 
     Node* new1 = node2;
     Node* new2 = node1;
@@ -96,13 +103,19 @@ bool LinkedList::find_and_delete(int target) {
         return false;
     }
 
+    // temporary tracker
+
     Node* temp = head;
+
+    // if we are deleting the head, we just delete it and set next one as head
 
     if (head->data == target) {
         head = temp->link;
         delete temp;
         return true;
     }
+
+    // keep track of node to delete and the one before it
 
     Node* deleted = temp;
 
@@ -116,6 +129,8 @@ bool LinkedList::find_and_delete(int target) {
         }
         temp = temp->link;
     }
+
+    // delete node and join the previous one with the next one
 
     Node* next = deleted->link;
     temp->link = next;
