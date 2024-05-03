@@ -35,62 +35,24 @@ void LinkedList::printList() {
 /////////// your code goes here... DO NOT change the function signatures ///////////
 
 bool LinkedList::swap(int pos1, int pos2) {
-    
-    Node* temp1 = head;
-    Node* node1 = temp1;
 
-    int n1 = 0;
+    Node* track1 = head;
+    Node* track2 = head;
 
-    // find which node is in pos1
-    // then keep track of it and the one before it
+    int i = 0;
+    int j = 0;
 
-    if (pos1 == 0) {
-        node1 = head;
-        temp1 = node1;
-    } else {
-        while (temp1 != nullptr) {
-            if (n1 == pos1) {
-                node1 = temp1->link;
-                break;
-            }
-
-            temp1 = temp1->link;
-            n1++;
+    for (int i = 0; i < pos1+pos2; i++) {
+        if (i == pos2) {
+            break;
         }
+
+        track2 = track2->link;
     }
 
-    Node* temp2 = head;
-    Node* node2 = temp2;
-
-    int n2 = 0;
-
-    // same thing with pos2
-
-    if (pos2 == 0) {
-        node2 = head;
-        temp2 = node2;
-    } else {
-        while (temp1 != nullptr) {
-            if (n2 == pos2) {
-                node1 = temp2->link;
-                break;
-            }
-
-            temp2 = temp2->link;
-            n2++;
-        }
-    }
-
-    // perform swap operation
-
-    Node* new1 = node2;
-    Node* new2 = node1;
-
-    temp1->link = new1;
-    new1->link = node1->link;
-
-    temp2->link = new2;
-    new2->link = node2->link;
+    int temp = track2->data;
+    track2->data = track1->data;
+    track1->data = temp;
 
     return true;
     

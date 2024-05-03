@@ -18,7 +18,7 @@ int main() {
 
     std::cout << std::endl;
 
-    bool status = L.swap(1, 3);
+    bool status = L.find_and_delete(3);
 
     std::cout << status << std::endl;
     L.printList();
