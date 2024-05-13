@@ -1,26 +1,30 @@
 #include "TrieNode.h"
 
-TrieNode::TrieNode() : endWord(false) {}
-
-void TrieNode::insert(std::string& word) {
-    TrieNode* current = this;
-    for (char c : word) {
-        if (!current->children[c]) {
-            current->children[c] = new TrieNode();
-        }
-        current = current->children[c];
-    }
-    current->endWord = true;
+TrieNode::TrieNode() {
+    endOfWord = false;
+    children[26] = { NULL };
 }
 
-bool TrieNode::isEndOfWord() {
-    return endWord;
+TrieNode* TrieNode::getChild(int i) {
+    return children[i];
 }
 
-TrieNode* TrieNode::getNode(char c) {
-    return children[c];
+void TrieNode::setChild(TrieNode* node, int i) {
+    children[i] = node;
 }
 
-std::unordered_map<char, TrieNode*>& TrieNode::getChildren() {
-    return children;
+bool TrieNode::isEnd() {
+    return endOfWord;
+}
+
+void TrieNode::setEnd(int n) {
+    endOfWord = n;
+}
+
+void TrieNode::setRouter(int i) {
+    rNum = i;
+}
+
+int TrieNode::getRouter() {
+    return rNum;
 }

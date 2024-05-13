@@ -8,12 +8,12 @@
 class Autocomplete {
 private:
     TrieNode* root;
-    void getAllSuggestions(TrieNode* node, const std::string& prefix, std::vector<std::string>& suggestions);
 public:
     Autocomplete();
     Autocomplete(TrieNode* R);
-    void insert(std::string& word);
-    std::vector<std::string> getSuggestions(std::string& partialWord);
+    void insert(std::string word);
+    std::vector<std::string> getSuggestions(std::string partialWord);
+    void getAllSuggestions(TrieNode* node, std::string pre, std::vector<std::string>& ans);
 };
 
 #endif // AUTOCOMPLETE_H

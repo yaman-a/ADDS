@@ -6,15 +6,18 @@
 
 class TrieNode {
 private:
-    bool endWord;
-    std::unordered_map<char, TrieNode*> children;
-    
+    bool endOfWord;
+    TrieNode* children[26];
+    int rNum;
+
 public:
     TrieNode();
-    void insert(std::string& word);
-    TrieNode* getNode(char c);
-    bool isEndOfWord();
-    std::unordered_map<char, TrieNode*>& getChildren();
+    TrieNode* getChild(int i);
+    void setChild(TrieNode* node, int i);
+    bool isEnd();
+    void setEnd(int n);
+    void setRouter(int i);
+    int getRouter();
 };
 
 #endif // TRIENODE_H
