@@ -20,7 +20,3 @@ int kth_largest(std::vector<int> values, int k) {
 
     return min_heap.top();
 }
-
-int main() {
-    
-}
