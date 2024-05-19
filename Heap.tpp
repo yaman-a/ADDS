@@ -58,11 +58,13 @@ template <typename T>
 void Heap<T>::insert(T value) {
   values.push_back(value);
 
-  int i = values.size() - 1;
+  int c = values.size() - 1;
+  int p = floor((c - 1) / 2);
 
-  while (values[(i - 1) / 2] > values[i] && i > 0) {
-    std::swap(values[(i - 1) / 2], values[i]);
-    i = (i - 1) / 2;
+  while (c > 0 && values.at(c) < values.at(p)) {
+    std::swap(values.at(c), values.at(p));
+    c = p;
+    p = floor((c - 1) / 2);
   }
 }
 
@@ -72,16 +74,23 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  int n = -1;
-  for (int i = 0; i < values.size(); i++) {
-    if (values[i] == value) {
-      n = i;
-      break;
-    }
+  auto i = std::find(values.begin(), values.end(), value);
+  if (i == values.end()) {
+    return;
   }
-  values[n] = values.back();
+
+  int idx = i - values.begin();
+  values[idx] = values.back();
   values.pop_back();
-  heapify(n)
+
+  heapify(idx);
+
+  int p = floor((idx - 1) / 2);
+  while (idx > 0 && values.at(idx) < values.at(p)) {
+    std::swap(values.at(idx), values.at(p));
+    idx = p;
+    p = floor((idx - 1) / 2);
+  }
 }
 
 /*******************************/
@@ -90,7 +99,7 @@ void Heap<T>::remove(T value) {
 
 template <typename T>
 T Heap<T>::getMin() {
-  return values[0];
+  return values.at(0);
 }
 
 /*******************************/
