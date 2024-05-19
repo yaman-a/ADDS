@@ -4,8 +4,6 @@
 #include <cmath>
 #include <algorithm>
 
-#include "Heap.tpp"
-
 int kth_largest(std::vector<int> values, int k) {
     std::priority_queue<int, std::vector<int>, std::greater<int>> min_heap;
 
